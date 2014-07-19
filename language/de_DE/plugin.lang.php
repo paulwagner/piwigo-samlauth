@@ -51,4 +51,5 @@ $lang['Send randomly generated password to automatically generated user by mail.
 $lang['Instead you can safely change the generated password to something else in the Piwigo admin panel, if local authentication to Piwigo is still needed.'] = 'Du kannst allerdings das generierte Passwort problemlos &uuml;ber die Profileinstellungen wieder &auml;ndern, wenn die lokale Authentifizierung an Piwigo ben&ouml;tigt wird.';
 $lang['Enable verbose debug mode'] = 'Aktiviere Debug Modus';
 $lang['Log debug messages. Logfile is stored at logs/logfile.txt. Default: disabled'] = 'Schreibe Debugnachichten nach logs/logfile.txt. Standard: deaktiviert';
+$lang['Save'] = 'Speichern';
 ?>

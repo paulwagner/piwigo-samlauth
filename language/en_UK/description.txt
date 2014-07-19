@@ -1,0 +1,1 @@
+Allow piwigo users to authenticate through SimpleSAMLphp as well as the local Piwigo authentication.
