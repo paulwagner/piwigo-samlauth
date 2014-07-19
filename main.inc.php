@@ -2,7 +2,7 @@
 /*
 Plugin Name: samlAuth
 Version: 1.1
-Description: Allow piwigo users to authenticate through SimpleSAMLphp as well as the local Piwigo authentication.
+Description: Allow Piwigo users to authenticate through SimpleSAMLphp as well as the local Piwigo authentication.
 Plugin URI: 
 Author: cyph0r
 Author URI: http://cyph0r.com
