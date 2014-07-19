@@ -2,7 +2,7 @@
 /*
 Plugin Name: samlAuth
 Version: 1.1
-Description: Allow piwigo users to authenticate through SAML as well as the local authentication
+Description: Allow piwigo users to authenticate through SimpleSAMLphp as well as the local Piwigo authentication.
 Plugin URI: 
 Author: cyph0r
 Author URI: http://cyph0r.com
@@ -34,6 +34,7 @@ include_once(SAMLAUTH_PATH . 'include/public_events.inc.php');
 add_event_handler('init', 'samlauth_init');
 
 add_event_handler('try_log_user','login', EVENT_HANDLER_PRIORITY_NEUTRAL + 1, 4);
+add_event_handler('user_logout','logout', EVENT_HANDLER_PRIORITY_NEUTRAL, 1);
 add_event_handler('get_admin_plugin_menu_links', array(&$samlauth, 'admin_menu'));
 
 add_event_handler('loc_begin_identification', 'samlauth_begin_identification');
@@ -105,6 +106,13 @@ function login($success, $username, $password, $remember_me){
       log_message('User ' . $username . ' was authenticated but does not exist in the Piwigo database.');
     trigger_action('login_failure', stripslashes($username));
     return false;  
+  }
+}
+
+function logout($uid) {
+  global $samlauth;
+  if($samlauth->is_authenticated()) {
+    $samlauth->do_logout();
   }
 }
 

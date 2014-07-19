@@ -67,6 +67,15 @@ class SAMLAuth {
        $return_url .= '&' . $_SERVER['QUERY_STRING'];
     return $this->auth->getLoginURL($return_url);
   }
+  
+  public function do_logout() {
+    if(!$this->is_connected()) {
+      if($this->config['enable_debug'])
+        log_message('Trying to logout, but no connection has been established.');      
+      return;
+    }
+    $this->auth->logout();
+  }
 
   public function auth_connect() {
     $this->auth = 0;
