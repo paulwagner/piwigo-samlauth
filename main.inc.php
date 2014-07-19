@@ -48,10 +48,9 @@ function samlauth_init(){
 }
 
 function login($success, $username, $password, $remember_me){
-  echo 'LOGIN';
-  
   global $samlauth;
-  if($username != '' || !$samlauth->is_authenticated())
+  $authenticated = $samlauth->is_authenticated();
+  if($username != '' || !$authenticated)
     return pwg_login(false, $username, $password, $remember_me); // No SAML authentication, so go back to normal Piwigo behavior.
 
   // SAML authentication is done, so get metadata
@@ -81,7 +80,6 @@ function login($success, $username, $password, $remember_me){
     trigger_action('login_success', stripslashes($username));
     return true;
   }
-  return false;
 
   // Otherwise we might add the user
   if ($samlauth->config['create_user']) {
