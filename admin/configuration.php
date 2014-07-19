@@ -37,5 +37,5 @@ $template->assign('S_MAIL', 	$samlauth->config['s_mail']);
 $template->assign('CREATE_USER', 	$samlauth->config['create_user']);
 $template->assign('ENABLE_DEBUG', 	$samlauth->config['enable_debug']);
 
-$template->assign_var_from_handle( 'ADMIN_CONTENT', 'plugin_admin_content');
+$template->assign_var_from_handle('ADMIN_CONTENT', 'plugin_admin_content');
 ?>

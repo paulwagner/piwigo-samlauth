@@ -7,18 +7,7 @@ defined('PHPWG_ROOT_PATH') or die('Hacking attempt!');
 * where PLUGINID is the directory name of your plugin
 */
 class samlAuth_maintain extends PluginMaintain {
-  /*
-  * My pattern uses a single installation method, which handles both installation
-  * and activation, where Piwigo always calls 'activate' just after 'install'
-  * As a result I use a marker in order to not execute the installation method twice
-  *
-  * The installation function is called by main.inc.php and maintain.inc.php
-  * in order to install and/or update the plugin.
-  *
-  * That's why all operations must be conditionned :
-  *    - use "if empty" for configuration vars
-  *    - use "IF NOT EXISTS" for table creation
-  */
+
   private $installed = false;
   
   /**
