@@ -10,6 +10,7 @@ function samlauth_begin_identification() {
     $_POST['login'] = 1;
     $_POST['username'] = '';
     $_POST['password'] = '';    
+      
     return;
   }
 

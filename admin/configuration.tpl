@@ -52,22 +52,6 @@
         </label>
         <br/><small>{'Attribute key of mail address in IDP metadata. Default: mail'|@translate}</small>      
     	</li>
-    	<li>
-    		<label>
-          {'Attriute to be used as first name'|@translate}
-      		<input type="text" id="s_first" name="S_FIRST" value="{$S_FIRST}" />
-        </label>
-        <br/><small>{'Attribute key of first name in IDP metadata. Default: firstname'|@translate}</small>      
-    	</li>
-    	<li>
-    		<label>
-          {'Attriute to be used as last name'|@translate}
-      		<input type="text" id="s_last" name="S_LAST" value="{$S_LAST}" />
-        </label>
-        <br/><small>{'Attribute key of last name in IDP metadata. Default: lastname'|@translate}</small>      
-    	</li>
-    </ul>
-    <i>{'Username and mail address is mandatory. First and last name can be left empty if not available in your IPD configuration.'|@translate}</i>
   </fieldset>
     
   <fieldset>
@@ -79,14 +63,6 @@
     			{'Automatically create new piwigo users'|@translate}
         </label>
         <br/><small>{'Automatically create piwigo user with random password if authenticated username is not existing. Default: enabled'|@translate}</small>      
-  		</li>
-  		<li>
-  			<label>
-  			 <input type="checkbox" id="send_mail" name="SEND_MAIL" value="{$SEND_MAIL}" {if $SEND_MAIL }checked{/if} />			
-  			 {'Send password for new piwigo users by mail'|@translate}
-        </label>
-        <br/><small>{'Send randomly generated password to automatically generated user by mail. Password is sent in plain text, thus discouraged! Default: disabled'|@translate}</small>      
-        <br/><small>{'Instead you can safely change the generated password to something else in the Piwigo admin panel, if local authentication to Piwigo is still needed.'|@translate}</small>      
   		</li>
   		<li>
   			<label>
