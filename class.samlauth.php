@@ -38,10 +38,28 @@ class SAMLAuth {
     return is_object($this->auth);
   }
   
+  public function is_authenticated() {
+    if(!$this->is_connected()) {
+      if($this->config['enable_debug'])
+        log_message('Trying to get authentication info, but no connection has been established.');      
+      return false;
+    }
+    return $this->auth->isAuthenticated();
+  }
+  
+  public function get_attributes() {
+    if(!$this->is_connected()) {
+      if($this->config['enable_debug'])
+        log_message('Trying to get authentication data, but no connection has been established.');      
+      return false;
+    }
+    return $this->auth->getAttributes();
+  }
+  
   public function get_login_url() {
     if(!$this->is_connected()) {
       if($this->config['enable_debug'])
-        log_message('Trying to get login url, but not connection has been established.');      
+        log_message('Trying to get login url, but no connection has been established.');      
       return '';
     }
     $return_url = get_absolute_root_url() . 'identification.php?saml_redirect=1';
@@ -79,11 +97,8 @@ class SAMLAuth {
     $this->config['base_path'] = '/var/simplesaml/';
     $this->config['sp_id'] = 'default-sp';
     $this->config['s_uid'] = 'uid';
-    $this->config['s_first'] = 'firstname';
-    $this->config['s_last'] = 'lastname';
     $this->config['s_mail'] = 'mail';
     $this->config['create_user'] = True;
-    $this->config['send_mail'] = False;
     $this->config['enable_debug'] = False;
   }
 
