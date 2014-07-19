@@ -1,7 +1,7 @@
 <h2>{'SAMLAuth Plugin Configuration'|@translate}</h2>
 
 <p>
-  {'Status of SimpleSAML connection:'|@translate}
+  {'Status of SimpleSAML connection'|@translate}:
   <br /><br />    
   {if (!{$AUTH_CONNECTED})}
   	<span style="color:red;">{'Not connected. Please check settings.'|@translate}</span>

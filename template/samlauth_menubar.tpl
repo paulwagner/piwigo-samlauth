@@ -7,9 +7,9 @@
   <dd>
     <form id="quickconnect">
     <fieldset style="text-align:center;">
-      <legend>{'Or use single sign login:'|@translate}:</legend>
+      <legend>{'Or use single sign login'|@translate}</legend>
       {if $auth.connected}
-        <a href="{$auth.login_link}">{'Single-Sign-Login.'|@translate}</a>
+        <a href="{$auth.login_link}">{'Single-Sign-Login'|@translate}</a>
       {else}
         <p>{'Please check SAMLAuth configuration.'|@translate}</p>
       {/if}
